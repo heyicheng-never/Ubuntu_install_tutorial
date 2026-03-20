@@ -294,4 +294,36 @@ source ~/catkin_ws/devel/setup.bash
    sudo apt-mark unhold linux-image-4.4.0-21-generic
    ```
 
+
+
+
+# 8. 安装VSCode
+通过官方APT仓库安装，可随APT更新自动升级。(ubuntu 20.04/22.04)
+1. 安装依赖(密钥导入/仓库配置依赖)
+
+   ``````cs
+   sudo apt update
+   sudo apt install -y wget gpg apt-transport-https software-properties-common 
+   ``````
+
+2. 导入微软官方GPG密钥（避免安装时签名验证失败）
+
+  ```cs
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg 
+    sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/packages.microsoft.gpg 
+  ```
+
+3. 添加VSCode官方APT仓库
+
+   ```
+   echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null 
+   ```
+
+4. 更新源并安装VSCode
+
+   ```
+   sudo apt update
+   sudo apt install -y code
+   ```
+
    
