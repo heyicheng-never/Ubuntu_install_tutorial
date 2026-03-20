@@ -308,10 +308,10 @@ source ~/catkin_ws/devel/setup.bash
 
 2. 导入微软官方GPG密钥（避免安装时签名验证失败）
 
-  ```cs
-    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg 
-    sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/packages.microsoft.gpg 
-  ```
+	```cs
+   wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg 
+   sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/packages.microsoft.gpg 
+	```
 
 3. 添加VSCode官方APT仓库
 
